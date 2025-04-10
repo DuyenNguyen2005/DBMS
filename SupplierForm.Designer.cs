@@ -180,6 +180,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SupplierForm";
             this.Text = "Supplier Form";
+            this.Load += new System.EventHandler(this.SupplierForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

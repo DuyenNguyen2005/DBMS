@@ -21,5 +21,10 @@ namespace Project_DBMS
         {
             Close();
         }
+
+        private void SupplierForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

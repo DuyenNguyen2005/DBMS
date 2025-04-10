@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "D:\\Database Management System\\Project_DBMS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\supplierform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:supplierform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\sellform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:sellform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\salereportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:salereportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|D:\\Database Management System\\Project_DBMS\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|d:\\database management system\\project_dbms\\staticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:staticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|D:\\Database Management System\\Project_DBMS\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|D:\\Database Management System\\Project_DBMS\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,6 +63,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SupplierForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\SupplierForm.cs",
+              "RelativeDocumentMoniker": "SupplierForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\SupplierForm.cs [Design]",
+              "RelativeToolTip": "SupplierForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:26:07.728Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SellForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\SellForm.cs",
+              "RelativeDocumentMoniker": "SellForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\SellForm.cs [Design]",
+              "RelativeToolTip": "SellForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:26:03.959Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaleReportForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\SaleReportForm.cs",
+              "RelativeDocumentMoniker": "SaleReportForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\SaleReportForm.cs [Design]",
+              "RelativeToolTip": "SaleReportForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:26:01.428Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImportForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\ImportForm.cs",
+              "RelativeDocumentMoniker": "ImportForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\ImportForm.cs [Design]",
+              "RelativeToolTip": "ImportForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:25:38.807Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\EmployeeForm.cs",
+              "RelativeDocumentMoniker": "EmployeeForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\EmployeeForm.cs [Design]*",
+              "RelativeToolTip": "EmployeeForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:25:07.154Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerForm.cs [Design]",
+              "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\CustomerForm.cs",
+              "RelativeDocumentMoniker": "CustomerForm.cs",
+              "ToolTip": "D:\\Database Management System\\Project_DBMS\\CustomerForm.cs [Design]",
+              "RelativeToolTip": "CustomerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:25:03.829Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "StaticsForm.cs [Design]",
               "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\StaticsForm.cs",
               "RelativeDocumentMoniker": "StaticsForm.cs",
@@ -50,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -63,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\Database Management System\\Project_DBMS\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",

@@ -53,6 +53,13 @@
     <Compile Include="CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\Import_Transaction.cs" />
+    <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\Sell_Transaction.cs" />
+    <Compile Include="DTO\Supplier.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,5 +168,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

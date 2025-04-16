@@ -22,7 +22,7 @@ namespace Project_DBMS.DAO
         // Add Customer
         public bool AddCustomer(string name, string phone, string address)
         {
-            string query = "EXEC AddCustomer @name, @phone, @address";
+            string query = "EXEC AddCustomer @Cus_Name , @Cus_Phone , @Cus_Address";
             object[] parameters = new object[] { name, phone, address };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
 
@@ -32,7 +32,7 @@ namespace Project_DBMS.DAO
         // Update Customer
         public bool UpdateCustomer(int id, string name, string phone, string address)
         {
-            string query = "EXEC UpdateCustomer @id, @name, @phone, @address";
+            string query = "EXEC UpdateCustomer @id , @name , @phone , @address";
             object[] parameters = new object[] { id, name, phone, address };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
             return result > 0;
@@ -64,7 +64,7 @@ namespace Project_DBMS.DAO
         // Get Customers List
         public List<Customer> GetCustomerList()
         {
-            string query = "EXEC GetAllCustomers";
+            string query = "EXEC GetCustomerList";
             List<Customer> customers = new List<Customer>();
             var data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
@@ -100,5 +100,7 @@ namespace Project_DBMS.DAO
             }
             return customers;
         }
+
+        
     }
 }

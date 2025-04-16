@@ -11,11 +11,11 @@ namespace Project_DBMS.DTO
     {
         public int Pro_ID { get; set; }
         public string Pro_Name { get; set; }
-        public string Pro_Price { get; set; }
-        public string Pro_Quantity { get; set; }
+        public decimal Pro_Price { get; set; }
+        public int Pro_Quantity { get; set; }
         public string Pro_Type { get; set; }
         public int Sup_ID { get; set; }
-        public Product(int Pro_ID, string Pro_Name, string Pro_Price, string Pro_Quantity, string Pro_Type, int Sup_ID)
+        public Product(int Pro_ID, string Pro_Name, decimal Pro_Price, int Pro_Quantity, string Pro_Type, int Sup_ID)
         {
             this.Pro_ID = Pro_ID;
             this.Pro_Name = Pro_Name;
@@ -29,8 +29,8 @@ namespace Project_DBMS.DTO
         {
             Pro_ID = (int)row["Pro_ID"];
             Pro_Name = row["Pro_Name"].ToString();
-            Pro_Price = row["Pro_Price"].ToString();
-            Pro_Quantity = row["Pro_Quantity"].ToString();
+            Pro_Price = (decimal)row["Pro_Price"];
+            Pro_Quantity = (int)row["Pro_Quantity"];
             Pro_Type = row["Pro_Type"].ToString();
             Sup_ID = (int)row["Pro_Supplier_ID"];
         }

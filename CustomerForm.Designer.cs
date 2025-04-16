@@ -30,7 +30,7 @@
         {
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lbAddress = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
@@ -43,6 +43,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.lbList = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,12 +62,12 @@
             this.txtName.Size = new System.Drawing.Size(324, 30);
             this.txtName.TabIndex = 22;
             // 
-            // txtPrice
+            // txtPhone
             // 
-            this.txtPrice.Location = new System.Drawing.Point(178, 238);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(324, 30);
-            this.txtPrice.TabIndex = 21;
+            this.txtPhone.Location = new System.Drawing.Point(178, 238);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(324, 30);
+            this.txtPhone.TabIndex = 21;
             // 
             // txtId
             // 
@@ -138,6 +140,7 @@
             this.btnEdit.TabIndex = 26;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -147,6 +150,7 @@
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -167,6 +171,7 @@
             this.dataGridViewCustomer.RowTemplate.Height = 28;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(426, 305);
             this.dataGridViewCustomer.TabIndex = 29;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
             // 
             // lbList
             // 
@@ -177,11 +182,30 @@
             this.lbList.TabIndex = 28;
             this.lbList.Text = "List of Customer";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(178, 470);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(324, 30);
+            this.txtSearch.TabIndex = 31;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(71, 473);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Search";
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1067, 472);
+            this.ClientSize = new System.Drawing.Size(1367, 607);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewCustomer);
             this.Controls.Add(this.lbList);
             this.Controls.Add(this.btnCancel);
@@ -190,7 +214,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lbAddress);
             this.Controls.Add(this.lbPhone);
@@ -201,6 +225,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerForm";
             this.Text = "Customer Form";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,7 +236,7 @@
 
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbPhone;
@@ -224,5 +249,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Label lbList;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

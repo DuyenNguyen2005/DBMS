@@ -35,7 +35,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lbDob = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
@@ -43,6 +43,8 @@
             this.lbId = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +57,7 @@
             this.dataGridViewEmployee.RowTemplate.Height = 28;
             this.dataGridViewEmployee.Size = new System.Drawing.Size(426, 305);
             this.dataGridViewEmployee.TabIndex = 44;
+            this.dataGridViewEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellClick);
             // 
             // lbList
             // 
@@ -83,6 +86,7 @@
             this.btnEdit.TabIndex = 41;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -92,6 +96,7 @@
             this.btnDelete.TabIndex = 40;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -101,6 +106,7 @@
             this.btnAdd.TabIndex = 39;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtName
             // 
@@ -109,12 +115,12 @@
             this.txtName.Size = new System.Drawing.Size(324, 30);
             this.txtName.TabIndex = 37;
             // 
-            // txtPrice
+            // txtPhone
             // 
-            this.txtPrice.Location = new System.Drawing.Point(176, 235);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(324, 30);
-            this.txtPrice.TabIndex = 36;
+            this.txtPhone.Location = new System.Drawing.Point(176, 235);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(324, 30);
+            this.txtPhone.TabIndex = 36;
             // 
             // txtId
             // 
@@ -176,11 +182,30 @@
             this.dtpDob.Size = new System.Drawing.Size(324, 30);
             this.dtpDob.TabIndex = 45;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(182, 467);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(324, 30);
+            this.txtSearch.TabIndex = 47;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(75, 470);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Search";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1067, 472);
+            this.ClientSize = new System.Drawing.Size(1067, 576);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDob);
             this.Controls.Add(this.dataGridViewEmployee);
             this.Controls.Add(this.lbList);
@@ -189,7 +214,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lbDob);
             this.Controls.Add(this.lbPhone);
@@ -200,6 +225,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeForm";
             this.Text = "Employee Form";
+            this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,7 +241,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lbDob;
         private System.Windows.Forms.Label lbPhone;
@@ -223,5 +249,7 @@
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.DateTimePicker dtpDob;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

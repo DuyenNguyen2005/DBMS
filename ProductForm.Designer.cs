@@ -44,9 +44,11 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
-            this.TxtSupplier = new System.Windows.Forms.TextBox();
+            this.txtSupplierId = new System.Windows.Forms.TextBox();
             this.lbList = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +124,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -131,6 +134,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -140,6 +144,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
@@ -186,12 +191,12 @@
             this.txtType.Size = new System.Drawing.Size(324, 30);
             this.txtType.TabIndex = 15;
             // 
-            // TxtSupplier
+            // txtSupplierId
             // 
-            this.TxtSupplier.Location = new System.Drawing.Point(175, 410);
-            this.TxtSupplier.Name = "TxtSupplier";
-            this.TxtSupplier.Size = new System.Drawing.Size(324, 30);
-            this.TxtSupplier.TabIndex = 16;
+            this.txtSupplierId.Location = new System.Drawing.Point(175, 410);
+            this.txtSupplierId.Name = "txtSupplierId";
+            this.txtSupplierId.Size = new System.Drawing.Size(324, 30);
+            this.txtSupplierId.TabIndex = 16;
             // 
             // lbList
             // 
@@ -211,15 +216,35 @@
             this.dataGridViewProduct.RowTemplate.Height = 28;
             this.dataGridViewProduct.Size = new System.Drawing.Size(426, 357);
             this.dataGridViewProduct.TabIndex = 18;
+            this.dataGridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(181, 575);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(324, 30);
+            this.txtSearch.TabIndex = 49;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 578);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Search";
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(1067, 761);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewProduct);
             this.Controls.Add(this.lbList);
-            this.Controls.Add(this.TxtSupplier);
+            this.Controls.Add(this.txtSupplierId);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtName);
@@ -240,6 +265,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductForm";
             this.Text = "Product Form";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -264,8 +290,10 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtType;
-        private System.Windows.Forms.TextBox TxtSupplier;
+        private System.Windows.Forms.TextBox txtSupplierId;
         private System.Windows.Forms.Label lbList;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

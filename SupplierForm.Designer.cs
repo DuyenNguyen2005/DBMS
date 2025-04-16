@@ -41,6 +41,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
             this.lbList = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +122,7 @@
             this.btnEdit.TabIndex = 23;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -129,6 +132,7 @@
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -138,6 +142,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridViewSupplier
             // 
@@ -148,6 +153,7 @@
             this.dataGridViewSupplier.RowTemplate.Height = 28;
             this.dataGridViewSupplier.Size = new System.Drawing.Size(426, 247);
             this.dataGridViewSupplier.TabIndex = 26;
+            this.dataGridViewSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSupplier_CellClick);
             // 
             // lbList
             // 
@@ -158,11 +164,29 @@
             this.lbList.TabIndex = 25;
             this.lbList.Text = "List of Supplier";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(185, 404);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(324, 30);
+            this.txtSearch.TabIndex = 49;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 407);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Search";
+            // 
             // SupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1067, 419);
+            this.ClientSize = new System.Drawing.Size(1067, 540);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewSupplier);
             this.Controls.Add(this.lbList);
             this.Controls.Add(this.btnCancel);
@@ -202,5 +226,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridViewSupplier;
         private System.Windows.Forms.Label lbList;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

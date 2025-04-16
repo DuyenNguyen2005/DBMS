@@ -24,7 +24,7 @@ namespace Project_DBMS.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=eovien5210.database.windows.net;Initial Catalog=Pro_Wins;Persist Security Info=True;User ID=sharing_database;Password=KhongBietDatGiHet@@@123;Encrypt=True;Trust Server Certificate=True ";
+        private string connectionSTR = "Data Source=eovien5210.database.windows.net;Initial Catalog=DBMS_Project;Persist Security Info=True;User ID=sharing_database;Password=KhongBietDatGiHet@@@123;Encrypt=True;TrustServerCertificate=True ";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

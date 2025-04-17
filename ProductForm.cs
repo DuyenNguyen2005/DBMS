@@ -34,12 +34,12 @@ namespace Project_DBMS
         }
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtId.Text = dataGridViewProduct.CurrentRow.Cells["id"].Value.ToString();
-            txtName.Text = dataGridViewProduct.CurrentRow.Cells["name"].Value.ToString();
-            txtPrice.Text = dataGridViewProduct.CurrentRow.Cells["price"].Value.ToString();
-            txtQuantity.Text = dataGridViewProduct.CurrentRow.Cells["quantity"].Value.ToString();
-            txtType.Text = dataGridViewProduct.CurrentRow.Cells["type"].Value.ToString();
-            txtSupplierId.Text = dataGridViewProduct.CurrentRow.Cells["supplier_id"].Value.ToString();
+            txtId.Text = dataGridViewProduct.CurrentRow.Cells["Pro_ID"].Value.ToString();
+            txtName.Text = dataGridViewProduct.CurrentRow.Cells["Pro_Name"].Value.ToString();
+            txtPrice.Text = dataGridViewProduct.CurrentRow.Cells["Pro_Price"].Value.ToString();
+            txtQuantity.Text = dataGridViewProduct.CurrentRow.Cells["Pro_Quantity"].Value.ToString();
+            txtType.Text = dataGridViewProduct.CurrentRow.Cells["Pro_Type"].Value.ToString();
+            txtSupplierId.Text = dataGridViewProduct.CurrentRow.Cells["Sup_ID"].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

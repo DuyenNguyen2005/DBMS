@@ -44,7 +44,7 @@ namespace Project_DBMS.DAO
         //Get Product by ID
         public Product GetProductById(int id)
         {
-            string query = "EXEC GetProductById @id";
+            string query = "SELECT * FROM Product WHERE Pro_ID = @id";
             object[] parameters = new object[] { id };
             var data = DataProvider.Instance.ExecuteQuery(query, parameters);
             if (data.Rows.Count > 0)
@@ -77,6 +77,19 @@ namespace Project_DBMS.DAO
                 products.Add(new Product(item));
             }
             return products;
+        }
+
+        // Get Products by Name
+        public int GetProductIdByName(string productName)
+        {
+            string query = "SELECT Pro_ID FROM Product WHERE Pro_Name = @name";
+            object[] parameters = new object[] { productName };
+            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
+            if (data.Rows.Count > 0)
+            {
+                return Convert.ToInt32(data.Rows[0]["Pro_ID"]);
+            }
+            return -1; // hoặc throw exception nếu cần
         }
 
         ////Get Best Selling Products

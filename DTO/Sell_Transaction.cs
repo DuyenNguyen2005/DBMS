@@ -13,17 +13,21 @@ namespace Project_DBMS.DTO
         public int Cus_ID { get; set; }
         public int Emp_ID { get; set; }
         public DateTime Sell_Date { get; set; }
-        public double Sell_Discount { get; set; }
+        public int Sell_Quantity { get; set; }
+        public decimal Sell_Discount { get; set; }
+        public decimal Sell_Price { get; set; } 
         public Sell_Transaction() { }
         
-        public Sell_Transaction(int Sell_ID, int Pro_ID, int Cus_ID, int Emp_ID, DateTime Sell_Date, double Sell_Discount)
+        public Sell_Transaction(int Sell_ID, int Pro_ID, int Cus_ID, int Emp_ID, DateTime Sell_Date, int Sell_Quantity, decimal Sell_Discount, decimal Sell_Price)
         {
             this.Sell_ID = Sell_ID;
             this.Pro_ID = Pro_ID;
             this.Cus_ID = Cus_ID;
             this.Emp_ID = Emp_ID;
             this.Sell_Date = Sell_Date;
+            this.Sell_Quantity = Sell_Quantity;
             this.Sell_Discount = Sell_Discount;
+            this.Sell_Price = Sell_Price;
         }
 
         public Sell_Transaction(System.Data.DataRow row)
@@ -33,7 +37,9 @@ namespace Project_DBMS.DTO
             Cus_ID = (int)row["Cus_ID"];
             Emp_ID = (int)row["Emp_ID"];
             Sell_Date = (DateTime)row["Sell_Date"];
-            Sell_Discount = (double)row["Sell_Discount"];
+            Sell_Quantity = (int)row["Sell_Quantity"];
+            Sell_Discount = (decimal)row["Sell_Discount"];
+            Sell_Price = (decimal)row["Sell_Price"];
         }
     }
 }

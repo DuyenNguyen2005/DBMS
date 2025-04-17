@@ -31,15 +31,12 @@
             this.dataGridViewImport = new System.Windows.Forms.DataGridView();
             this.lbList = new System.Windows.Forms.Label();
             this.TxtSupplier = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOk = new System.Windows.Forms.Button();
             this.lbSupplier = new System.Windows.Forms.Label();
-            this.lbType = new System.Windows.Forms.Label();
             this.lbQuantity = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
@@ -47,6 +44,11 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.dtpImport = new System.Windows.Forms.DateTimePicker();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewImport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             this.dataGridViewImport.RowTemplate.Height = 28;
             this.dataGridViewImport.Size = new System.Drawing.Size(462, 308);
             this.dataGridViewImport.TabIndex = 37;
+            this.dataGridViewImport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewImport_CellClick_1);
             // 
             // lbList
             // 
@@ -75,13 +78,6 @@
             this.TxtSupplier.Name = "TxtSupplier";
             this.TxtSupplier.Size = new System.Drawing.Size(324, 30);
             this.TxtSupplier.TabIndex = 35;
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(192, 339);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(324, 30);
-            this.txtType.TabIndex = 34;
             // 
             // txtQuantity
             // 
@@ -113,22 +109,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(192, 469);
+            this.btnCancel.Location = new System.Drawing.Point(378, 479);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 48);
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(54, 469);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(102, 48);
-            this.btnOk.TabIndex = 26;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
             // 
             // lbSupplier
             // 
@@ -138,15 +125,6 @@
             this.lbSupplier.Size = new System.Drawing.Size(84, 25);
             this.lbSupplier.TabIndex = 25;
             this.lbSupplier.Text = "Supplier";
-            // 
-            // lbType
-            // 
-            this.lbType.AutoSize = true;
-            this.lbType.Location = new System.Drawing.Point(49, 344);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(57, 25);
-            this.lbType.TabIndex = 24;
-            this.lbType.Text = "Type";
             // 
             // lbQuantity
             // 
@@ -210,25 +188,74 @@
             this.dtpImport.Size = new System.Drawing.Size(324, 30);
             this.dtpImport.TabIndex = 39;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(156, 585);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(324, 30);
+            this.txtSearch.TabIndex = 45;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 588);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Search";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(270, 479);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(102, 48);
+            this.btnEdit.TabIndex = 42;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(162, 479);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(102, 48);
+            this.btnDelete.TabIndex = 41;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(54, 479);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 48);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(1067, 715);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dtpImport);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.dataGridViewImport);
             this.Controls.Add(this.lbList);
             this.Controls.Add(this.TxtSupplier);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lbSupplier);
-            this.Controls.Add(this.lbType);
             this.Controls.Add(this.lbQuantity);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbName);
@@ -238,6 +265,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImportForm";
             this.Text = "Import Form";
+            this.Load += new System.EventHandler(this.ImportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewImport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,15 +277,12 @@
         private System.Windows.Forms.DataGridView dataGridViewImport;
         private System.Windows.Forms.Label lbList;
         private System.Windows.Forms.TextBox TxtSupplier;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lbSupplier;
-        private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Label lbQuantity;
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbName;
@@ -265,5 +290,10 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.DateTimePicker dtpImport;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

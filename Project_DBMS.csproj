@@ -56,7 +56,7 @@
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
-    <Compile Include="DAO\Import_Transaction.cs" />
+    <Compile Include="DAO\Import_TransactionDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\Sell_TransactionDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />

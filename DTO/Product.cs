@@ -32,7 +32,7 @@ namespace Project_DBMS.DTO
             Pro_Price = (decimal)row["Pro_Price"];
             Pro_Quantity = (int)row["Pro_Quantity"];
             Pro_Type = row["Pro_Type"].ToString();
-            Sup_ID = (int)row["Pro_Supplier_ID"];
+            Sup_ID = (int)row["Sup_ID"];
         }
     }
 }

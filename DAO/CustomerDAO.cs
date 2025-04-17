@@ -77,8 +77,19 @@ namespace Project_DBMS.DAO
         // Get Customer by ID
         public Customer GetCustomerByID(int id)
         {
-            string query = "EXEC GetCustomerByID @id";
+            string query = "SELECT * FROM Customer WHERE Cus_ID = @id";
             object[] parameters = new object[] { id };
+            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
+            if (data.Rows.Count > 0)
+            {
+                return new Customer(data.Rows[0]);
+            }
+            return null;
+        }
+        public Customer GetCustomerByName(string name)
+        {
+            string query = "SELECT * FROM Customer WHERE Cus_Name = @name";
+            object[] parameters = new object[] { name };
             var data = DataProvider.Instance.ExecuteQuery(query, parameters);
             if (data.Rows.Count > 0)
             {

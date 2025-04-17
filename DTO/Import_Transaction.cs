@@ -13,9 +13,9 @@ namespace Project_DBMS.DTO
         public int Pro_ID { get; set; }
         public DateTime Imp_Date { get; set; }
         public int Imp_Quantity { get; set; }
-        public double Imp_Price { get; set; }
+        public decimal Imp_Price { get; set; }
         public Import_Transaction() { }
-        public Import_Transaction(int Imp_ID, int Sup_ID, int Pro_ID, DateTime Imp_Date, int Imp_Quantity, double Imp_Price)
+        public Import_Transaction(int Imp_ID, int Sup_ID, int Pro_ID, DateTime Imp_Date, int Imp_Quantity, decimal Imp_Price)
         {
             this.Imp_ID = Imp_ID;
             this.Sup_ID = Sup_ID;
@@ -32,7 +32,7 @@ namespace Project_DBMS.DTO
             Pro_ID = (int)row["Pro_ID"];
             Imp_Date = (DateTime)row["Imp_Date"];
             Imp_Quantity = (int)row["Imp_Quantity"];
-            Imp_Price = (double)row["Imp_Price"];
+            Imp_Price = (decimal)row["Imp_Price"];
         }
     }
 }

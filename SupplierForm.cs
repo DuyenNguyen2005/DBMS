@@ -86,5 +86,10 @@ namespace Project_DBMS
             txtName.Text = dataGridViewSupplier.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtPhone.Text = dataGridViewSupplier.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewSupplier.DataSource = DAO.SupplierDAO.Instance.SearchSupplier(txtSearch.Text);
+        }
     }
 }

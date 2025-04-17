@@ -1,12 +1,163 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\customerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\customerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\importform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAASwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T01:50:39.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ProductDAO.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\ProductDAO.cs",
+              "RelativeToolTip": "DAO\\ProductDAO.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAADwvy4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T01:07:56.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeeDAO.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\EmployeeDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\EmployeeDAO.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\EmployeeDAO.cs",
+              "RelativeToolTip": "DAO\\EmployeeDAO.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAUwFoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T01:11:04.428Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "e44a5d91-70f2-4228-9e46-8cf81a880811",
+        "Display": 1,
+        "X": 600,
+        "Y": 115,
+        "Width": 929,
+        "Height": 913,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ImportForm.Designer.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.Designer.cs",
+              "RelativeDocumentMoniker": "ImportForm.Designer.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.Designer.cs",
+              "RelativeToolTip": "ImportForm.Designer.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAmwPsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T13:57:26.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImportForm.cs [Design]",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.cs",
+              "RelativeDocumentMoniker": "ImportForm.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.cs [Design]",
+              "RelativeToolTip": "ImportForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T13:54:07.396Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "383adde0-74d9-4818-87be-e758a3497cd4",
+        "Display": 1,
+        "X": 810,
+        "Y": 92,
+        "Width": 942,
+        "Height": 913,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerDAO.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\CustomerDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\CustomerDAO.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\CustomerDAO.cs",
+              "RelativeToolTip": "DAO\\CustomerDAO.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAADwv00AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T01:08:14.032Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

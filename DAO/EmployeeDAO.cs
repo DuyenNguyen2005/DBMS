@@ -81,7 +81,7 @@ namespace Project_DBMS.DAO
         // Get Employee by ID
         public Employee GetEmployeeByID(int id)
         {
-            string query = "EXEC GetEmployeeByID @id";
+            string query = "SELECT * FROM Employee WHERE Emp_ID = @id";
             object[] parameters = new object[] { id };
             var data = DataProvider.Instance.ExecuteQuery(query, parameters);
             if (data.Rows.Count > 0)
@@ -90,6 +90,18 @@ namespace Project_DBMS.DAO
             }
             return null;
         }
+        // Get Employee by Name
+        public Employee GetEmployeeByName(string name)
+        {
+            string query = string.Format("SELECT * FROM Employee WHERE Emp_Name = N'{0}'", name );
+            var data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+            {
+                return new Employee(data.Rows[0]);
+            }
+            return null;
+        }
+
 
         // Get Top Employee
         public List<Employee> GetTopEmployee(DateTime startDate, DateTime endDate, int top)

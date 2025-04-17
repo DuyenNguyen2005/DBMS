@@ -20,37 +20,37 @@ namespace Project_DBMS
         private void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProductForm productForm = new ProductForm();
-            productForm.ShowDialog();
+            productForm.Show();
         }
 
         private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SupplierForm supplierForm = new SupplierForm();
-            supplierForm.ShowDialog();
+            supplierForm.Show();
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustomerForm customerForm = new CustomerForm();
-            customerForm.ShowDialog();
+            customerForm.Show();
         }
 
         private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmployeeForm employeeForm = new EmployeeForm();
-            employeeForm.ShowDialog();
+            employeeForm.Show();
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImportForm importForm = new ImportForm();
-            importForm.ShowDialog();
+            importForm.Show();
         }
 
         private void sellToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SellForm sellForm = new SellForm();
-            sellForm.ShowDialog();
+            sellForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -61,19 +61,19 @@ namespace Project_DBMS
         private void inventoryReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InvenReportForm inventoryReportForm = new InvenReportForm();
-            inventoryReportForm.ShowDialog();
+            inventoryReportForm.Show();
         }
 
         private void saleReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaleReportForm saleReportForm = new SaleReportForm();
-            saleReportForm.ShowDialog();
+            saleReportForm.Show();
         }
 
         private void productStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StaticsForm productStatisticsForm = new StaticsForm();
-            productStatisticsForm.ShowDialog();
+            productStatisticsForm.Show();
         }
     }
 }

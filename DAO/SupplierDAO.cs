@@ -21,13 +21,13 @@ namespace Project_DBMS.DAO
         // Add Supplier
         public bool AddSupplier(string name, string phone)
         {
-            string query = "EXEC AddSupplier @Sup_Name , @Sup_Phone , @Sup_Address";
+            string query = "EXEC AddSupplier @Sup_Name , @Sup_Phone";
             object[] parameters = new object[] { name, phone};
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
             return result > 0;
         }
         // Update Supplier
-        public bool UpdateSupplier(int id, string name, string phon)
+        public bool UpdateSupplier(int id, string name, string phone)
         {
             string query = "EXEC UpdateSupplier @id , @name , @phone , @address";
             object[] parameters = new object[] { id, name, phone};
@@ -57,10 +57,10 @@ namespace Project_DBMS.DAO
             return suppliers;
         }
         // Get Supplier by ID
-        public Supplier GetSupplierById(int id)
+        public Supplier GetSupplierById(int Sup_ID)
         {
-            string query = "EXEC GetSupplierById @id";
-            object[] parameters = new object[] { id };
+            string query = "SELECT * FROM Supplier WHERE Sup_ID = @Sup_ID";
+            object[] parameters = new object[] { Sup_ID };
             var data = DataProvider.Instance.ExecuteQuery(query, parameters);
             if (data.Rows.Count > 0)
             {
@@ -68,6 +68,19 @@ namespace Project_DBMS.DAO
             }
             return null;
         }
+        // Get Supplier by Name
+        public int GetSupplierIdByName(string supplierName)
+        {
+            string query = "SELECT Sup_ID FROM Supplier WHERE Sup_Name = @name";
+            object[] parameters = new object[] { supplierName };
+            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
+            if (data.Rows.Count > 0)
+            {
+                return Convert.ToInt32(data.Rows[0]["Sup_ID"]);
+            }
+            return -1; // hoặc throw exception nếu cần
+        }
+
         // Get All Suppliers
         public List<Supplier> GetSupplierList()
         {

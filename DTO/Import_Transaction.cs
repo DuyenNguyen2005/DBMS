@@ -6,33 +6,59 @@ using System.Threading.Tasks;
 
 namespace Project_DBMS.DTO
 {
-    class Import_Transaction
+    public class Import_Transaction
     {
-        public int Imp_ID { get; set; }
-        public int Sup_ID { get; set; }
-        public int Pro_ID { get; set; }
+        public string Imp_ID { get; set; }
+        public string Emp_ID { get; set; }
+        public string Sup_ID { get; set; }
         public DateTime Imp_Date { get; set; }
-        public int Imp_Quantity { get; set; }
-        public decimal Imp_Price { get; set; }
-        public Import_Transaction() { }
-        public Import_Transaction(int Imp_ID, int Sup_ID, int Pro_ID, DateTime Imp_Date, int Imp_Quantity, decimal Imp_Price)
+        
+
+        // Constructor cho Insert (thêm mới)
+        public Import_Transaction(string emp_ID, string sup_ID)
         {
-            this.Imp_ID = Imp_ID;
-            this.Sup_ID = Sup_ID;
-            this.Pro_ID = Pro_ID;
-            this.Imp_Date = Imp_Date;
-            this.Imp_Quantity = Imp_Quantity;
-            this.Imp_Price = Imp_Price;
+            this.Emp_ID = emp_ID;
+            this.Sup_ID = sup_ID;
         }
 
+        // Constructor cho Delete (xóa giao dịch nhập)
+        public Import_Transaction(string imp_ID)
+        {
+            this.Imp_ID = imp_ID;
+        }
+
+        // Constructor cho Update (cập nhật giao dịch nhập)
+        public Import_Transaction(string imp_ID, string emp_ID, string sup_ID, DateTime imp_Date)
+        {
+            this.Imp_ID = imp_ID;
+            this.Emp_ID = emp_ID;
+            this.Sup_ID = sup_ID;
+            this.Imp_Date = imp_Date;
+        }
+
+        // Constructor cho Search (tìm kiếm giao dịch nhập)
+        public Import_Transaction(string imp_ID = "", string emp_ID = "", string sup_ID = "", DateTime? imp_Date = null)
+        {
+            this.Imp_ID = imp_ID;
+            this.Emp_ID = emp_ID;
+            this.Sup_ID = sup_ID;
+            this.Imp_Date = imp_Date ?? DateTime.MinValue;
+        }
+
+        // Constructor từ DataRow (lấy dữ liệu từ SQL)
         public Import_Transaction(System.Data.DataRow row)
         {
-            Imp_ID = (int)row["Imp_ID"];
-            Sup_ID = (int)row["Sup_ID"];
-            Pro_ID = (int)row["Pro_ID"];
-            Imp_Date = (DateTime)row["Imp_Date"];
-            Imp_Quantity = (int)row["Imp_Quantity"];
-            Imp_Price = (decimal)row["Imp_Price"];
+            Imp_ID = row["Imp_ID"]?.ToString();
+            Emp_ID = row["Emp_ID"].ToString();
+            Sup_ID = row["Sup_ID"]?.ToString();
+            Imp_Date = row["Imp_Date"] != DBNull.Value ? Convert.ToDateTime(row["Imp_Date"]) : DateTime.MinValue;
+
+        }
+
+        public Import_Transaction(string imp_ID, string emp_ID, string sup_ID) : this(imp_ID)
+        {
+            Emp_ID = emp_ID;
+            Sup_ID = sup_ID;
         }
     }
 }

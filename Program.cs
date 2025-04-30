@@ -16,7 +16,11 @@ namespace Project_DBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Login());
+            //Application.Run(new StaffForm());
+            //Application.Run(new AdminForm());
+            //Application.Run(new StorekeeperForm());
+            //Application.Run(new ManagerForm());
         }
     }
 }

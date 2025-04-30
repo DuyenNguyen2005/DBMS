@@ -2,116 +2,200 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Project_DBMS.DAO
 {
-    class CustomerDAO
+    public class CustomerDAO
     {
-        public static CustomerDAO instance;
+        private static CustomerDAO instance;
+
         public static CustomerDAO Instance
         {
-            get { if (instance == null) instance = new CustomerDAO(); return instance; }
+            get
+            {
+                if (instance == null)
+                    instance = new CustomerDAO();
+                return instance;
+            }
             private set { instance = value; }
         }
 
         private CustomerDAO() { }
 
-        // Add Customer
-        public bool AddCustomer(string name, string phone, string address)
+        public bool Insert(DTO.Customer cus)
         {
-            string query = "EXEC AddCustomer @Cus_Name , @Cus_Phone , @Cus_Address";
-            object[] parameters = new object[] { name, phone, address };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            string query = "EXEC sp_InsertCustomer @Cus_ID ,  @Cus_Name , @Cus_Phone , @Cus_Address";
+            object[] parameters = { cus.Cus_ID, cus.Cus_Name, cus.Cus_Phone, cus.Cus_Address };
 
-            return result > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0;
         }
 
-        // Update Customer
-        public bool UpdateCustomer(int id, string name, string phone, string address)
+        public bool Update(DTO.Customer cus)
         {
-            string query = "EXEC UpdateCustomer @id , @name , @phone , @address";
-            object[] parameters = new object[] { id, name, phone, address };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
+            string query = "EXEC sp_UpdateCustomer @Cus_ID , @Cus_Name , @Cus_Phone , @Cus_Address";
+            object[] parameters = { cus.Cus_ID, cus.Cus_Name, cus.Cus_Phone, cus.Cus_Address };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
         }
 
-        // Delete Customer
-        public bool DeleteCustomer(int id)
+        public bool Delete(string cusId)
         {
-            string query = "EXEC DeleteCustomer @id";
-            object[] parameters = new object[] { id };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
+            string query = "EXEC sp_DeleteCustomer @Cus_ID";
+            object[] parameters = { cusId };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
         }
 
-        // Search Customer
-        public List<Customer> SearchCustomer(string keyword)
+        public List<DTO.Customer> Search(string search)
         {
-            string query = "EXEC SearchCustomer @Keyword";
-            object[] parameters = new object[] { keyword };
-            List<Customer> customers = new List<Customer>();
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            foreach (DataRow item in data.Rows)
+            string query = "EXEC sp_SearchCustomer @Search";
+            object[] parameters = { search };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            List<DTO.Customer> customers = new List<DTO.Customer>();
+            foreach (DataRow row in data.Rows)
             {
-                customers.Add(new Customer(item));
+                customers.Add(new DTO.Customer(row));
             }
             return customers;
         }
-
-        // Get Customers List
-        public List<Customer> GetCustomerList()
+        public DTO.Customer GetCustomer(string name)
         {
-            string query = "EXEC GetCustomerList";
-            List<Customer> customers = new List<Customer>();
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                customers.Add(new Customer(item));
-            }
-            return customers;
-        }
+            string query = "SELECT TOP 1 * FROM Customer WHERE Cus_Name COLLATE Vietnamese_CI_AI LIKE N'%' + @name + '%'";
+            object[] parameters = { name };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
 
-        // Get Customer by ID
-        public Customer GetCustomerByID(int id)
+            return data.Rows.Count > 0 ? new DTO.Customer(data.Rows[0]) : null;
+        }
+        public DTO.Customer GetCustomerbyID(string id)
         {
             string query = "SELECT * FROM Customer WHERE Cus_ID = @id";
-            object[] parameters = new object[] { id };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
-            {
-                return new Customer(data.Rows[0]);
-            }
-            return null;
+            object[] parameters = { id };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            return data.Rows.Count > 0 ? new DTO.Customer(data.Rows[0]) : null;
         }
-        public Customer GetCustomerByName(string name)
+        public string GetCustomerID(string name)
         {
-            string query = "SELECT * FROM Customer WHERE Cus_Name = @name";
-            object[] parameters = new object[] { name };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
+            string query = "SELECT Cus_ID FROM Customer WHERE Cus_Name COLLATE Vietnamese_CI_AI LIKE N'%' + @name + '%'";
+            object[] parameters = { name };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            return data.Rows.Count > 0 ? data.Rows[0]["Cus_ID"].ToString() : null;
+        }
+        public DataTable GetCustomers()
+        {
+            string query = "EXEC sp_SearchCustomer";
+
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public string GenerateCusID()
+        {
+            string supID = null;
+
+            try
             {
-                return new Customer(data.Rows[0]);
+                using (SqlConnection conn = new SqlConnection(DataProvider.Instance.connectionSTR))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_GenerateCusID", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Thêm tham số OUTPUT cho Sup_ID
+                        SqlParameter outputParam = new SqlParameter
+                        {
+                            ParameterName = "@Cus_ID",
+                            SqlDbType = SqlDbType.NVarChar,
+                            Size = 20,
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        // Thực thi stored procedure
+                        cmd.ExecuteNonQuery();
+
+                        // Lấy giá trị từ tham số OUTPUT và trả về
+                        supID = outputParam.Value.ToString();
+                    }
+                }
             }
-            return null;
+            catch (Exception ex)
+            {
+                // Log hoặc xử lý lỗi ở đây
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+
+            return supID;
+        }
+        public bool CheckExistence(string Cus_Name)
+        {
+            string query = "SELECT TOP 1 * FROM Customer WHERE Cus_Name = @Cus_Name";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { Cus_Name });
+
+            List<DTO.Customer> customers = new List<DTO.Customer>();
+            foreach (DataRow row in data.Rows)
+            {
+                customers.Add(new DTO.Customer(row));
+            }
+
+            // Correct null/empty check
+            return customers.Count > 0;
+        }
+        public bool CheckPhoneExistence(string Cus_Phone)
+        {
+            string query = "EXEC sp_SearchCustomer @Cus_Phone";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { Cus_Phone });
+
+            List<DTO.Customer> customers = new List<DTO.Customer>();
+            foreach (DataRow row in data.Rows)
+            {
+                customers.Add(new DTO.Customer(row));
+            }
+
+            // Correct null/empty check
+            return customers.Count > 0;
+        }
+        public bool CheckExistencebyID(string Cus_ID)
+        {
+            string query = "EXEC sp_SearchCustomer @Cus_ID";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { Cus_ID });
+
+            List<DTO.Customer> customers = new List<DTO.Customer>();
+            foreach (DataRow row in data.Rows)
+            {
+                customers.Add(new DTO.Customer(row));
+            }
+
+            // Correct null/empty check
+            return customers.Count > 0;
         }
 
-        // Get Loyal Customer
-        public List<Customer> GetLoyalCustomers(int MinTransactions)
+        public DataTable RecentCustomerPurchases()
         {
-            string query = "SELECT * FROM GetLoyalCustomers(@MinTransactions)";
-            List<Customer> customers = new List<Customer>();
-            object[] parameters = new object[] { MinTransactions };
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                customers.Add(new Customer(item));
-            }
-            return customers;
+            string query = "SELECT * FROM RecentCustomerPurchases";
+            return DataProvider.Instance.ExecuteQuery(query);
         }
-
-        
+        public DataTable VIPCustomers()
+        {
+            string query = "SELECT * FROM VIPCustomers";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable TopMonthlyCustomers()
+        {
+            string query = "SELECT * FROM TopMonthlyCustomers";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

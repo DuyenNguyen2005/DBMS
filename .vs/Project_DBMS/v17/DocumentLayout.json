@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\importtransaciton\\importuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importtransaciton\\importuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\storekeeperform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:storekeeperform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\customerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\customerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\employeedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|e:\\subject\\hk2_24-25\\database management system\\dbms_project\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\importform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91673CE-558B-4675-A1C4-142E4F383B83}|Project_DBMS.csproj|solutionrelative:importform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,126 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAASwBYAAAAAAAAAAAAAAA==",
+              "Title": "ManagerForm.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "ManagerForm.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ManagerForm.cs",
+              "RelativeToolTip": "ManagerForm.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAArwFsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T01:50:39.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDAO.cs",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\ProductDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\ProductDAO.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\ProductDAO.cs",
-              "RelativeToolTip": "DAO\\ProductDAO.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvy4AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T01:07:56.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeeDAO.cs",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\EmployeeDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\EmployeeDAO.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\EmployeeDAO.cs",
-              "RelativeToolTip": "DAO\\EmployeeDAO.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAUwFoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T01:11:04.428Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "e44a5d91-70f2-4228-9e46-8cf81a880811",
-        "Display": 1,
-        "X": 600,
-        "Y": 115,
-        "Width": 929,
-        "Height": 913,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ImportForm.Designer.cs",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.Designer.cs",
-              "RelativeDocumentMoniker": "ImportForm.Designer.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.Designer.cs",
-              "RelativeToolTip": "ImportForm.Designer.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAAAmwPsAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T13:57:26.178Z",
+              "WhenOpened": "2025-04-30T08:50:18.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ImportForm.cs [Design]",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.cs",
-              "RelativeDocumentMoniker": "ImportForm.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportForm.cs [Design]",
-              "RelativeToolTip": "ImportForm.cs [Design]",
+              "Title": "ManagerForm.cs [Design]",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "ManagerForm.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ManagerForm.cs [Design]",
+              "RelativeToolTip": "ManagerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T13:54:07.396Z",
+              "WhenOpened": "2025-04-30T08:50:15.998Z",
               "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "383adde0-74d9-4818-87be-e758a3497cd4",
-        "Display": 1,
-        "X": 810,
-        "Y": 92,
-        "Width": 942,
-        "Height": 913,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CustomerDAO.cs",
-              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\CustomerDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\CustomerDAO.cs",
-              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\DAO\\CustomerDAO.cs",
-              "RelativeToolTip": "DAO\\CustomerDAO.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAADwv00AAAAnAAAAAAAAAA==",
+              "Title": "AdminForm.cs [Design]",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\AdminForm.cs",
+              "RelativeDocumentMoniker": "AdminForm.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\AdminForm.cs [Design]",
+              "RelativeToolTip": "AdminForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T01:08:14.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T08:50:11.668Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImportUC.cs [Design]",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportTransaciton\\ImportUC.cs",
+              "RelativeDocumentMoniker": "ImportTransaciton\\ImportUC.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\ImportTransaciton\\ImportUC.cs [Design]",
+              "RelativeToolTip": "ImportTransaciton\\ImportUC.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:47:12.355Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StorekeeperForm.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\StorekeeperForm.cs",
+              "RelativeDocumentMoniker": "StorekeeperForm.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\StorekeeperForm.cs",
+              "RelativeToolTip": "StorekeeperForm.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAvwG8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:45:29.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Subject\\HK2_24-25\\Database Management System\\DBMS_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T00:17:16.182Z"
             }
           ]
         }

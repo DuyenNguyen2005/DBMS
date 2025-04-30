@@ -2,83 +2,134 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_DBMS.DAO
 {
-    class Import_TransactionDAO
+    public class ImportTransactionDAO
     {
-        public static Import_TransactionDAO instance;
-        public static Import_TransactionDAO Instance
+        private static ImportTransactionDAO instance;
+
+        public static ImportTransactionDAO Instance
         {
-            get { if (instance == null) instance = new Import_TransactionDAO(); return instance; }
+            get
+            {
+                if (instance == null)
+                    instance = new ImportTransactionDAO();
+                return instance;
+            }
             private set { instance = value; }
         }
 
-        private Import_TransactionDAO() { }
-        // Add Import Transaction
-        public bool AddImportTransaction(int sup_id, int pro_id, int quantity, decimal imp_price)
+        #region Import Transacion
+        private ImportTransactionDAO() { }
+
+        public bool Insert(DTO.Import_Transaction importTransaction)
         {
-            string query = "EXEC AddImportTransaction @Sup_ID , @Pro_ID , @Imp_Quantity , @Imp_Price";
-            object[] parameters = new object[] { sup_id, pro_id, quantity, imp_price };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-        // Delete Import Transaction
-        public bool DeleteImportTransaction(int id) {
-            string query = "EXEC DeleteImportTransaction @Imp_ID";
-            object[] parameters = new object[] { id };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-        // Update Import Transaction
-        public bool UpdateImportTransaction(int id, int sup_id, int pro_id, int quantity, decimal imp_price)
-        {
-            string query = "EXEC UpdateImportTransaction @Imp_ID , @Sup_ID , @Pro_ID , @Imp_Quantity , @Imp_Price";
-            object[] parameters = new object[] { id, sup_id, pro_id, quantity, imp_price };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-        //Get Import Transaction by ID
-        public Import_Transaction GetImportTransactionById(int Imp_ID)
-        {
-            string query = "EXEC GetImportTransactionById @Imp_ID";
-            object[] parameters = new object[] { Imp_ID };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
+            try
             {
-                return new Import_Transaction(data.Rows[0]);
+                // Insert into ImportTransaction
+                string queryImport = "EXEC sp_InsertImportTransaction @Imp_ID , @Emp_ID , @Sup_ID ,  @Imp_Date";
+            object[] parameter = new object[] { importTransaction.Imp_ID, importTransaction.Emp_ID, importTransaction.Sup_ID , importTransaction.Imp_Date};
+
+            int result = DataProvider.Instance.ExecuteNonQuery(queryImport, parameter);
+            return result > 0;
             }
-            return null;
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi SQL: {ex.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi hệ thống: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        public bool Delete(string impID)
+        {
+            string query = "EXEC sp_DeleteImportTransaction @Imp_ID";
+            object[] parameters = { impID };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
         }
 
-        // Get All Import Transactions
-        public List<Import_Transaction> GetImportTransactionList()
+        public List<DTO.Import_Transaction> Search(string search)
         {
-            string query = "EXEC GetImportTransactionList";
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            List<Import_Transaction> transactions = new List<Import_Transaction>();
-            foreach (DataRow item in data.Rows)
+            string query = "EXEC sp_SearchImportTransaction @Search";
+            object[] parameters = { search };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            List<DTO.Import_Transaction> imports = new List<DTO.Import_Transaction>();
+            foreach (DataRow row in data.Rows)
             {
-                transactions.Add(new Import_Transaction(item));
+                imports.Add(new DTO.Import_Transaction(row));
             }
-            return transactions;
-        }
-        // Search Import Transaction
-        public List<Import_Transaction> SearchImportTransaction(string keyword)
-        {
-            string query = "EXEC SearchImportTransaction @Keyword";
-            object[] parameters = new object[] { keyword };
-            List<Import_Transaction> transactions = new List<Import_Transaction>();
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            foreach (DataRow item in data.Rows)
-            {
-                transactions.Add(new Import_Transaction(item));
-            }
-            return transactions;
+            return imports;
         }
 
+        public List<DTO.Import_Transaction> GetImportTransactions()
+        {
+            string query = "EXEC sp_SearchImportTransaction";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            List<DTO.Import_Transaction> imports = new List<DTO.Import_Transaction>();
+            foreach (DataRow row in data.Rows)
+            {
+                imports.Add(new DTO.Import_Transaction(row));
+            }
+            return imports;
+        }
+        public string GenerateImpID()
+        {
+            using (SqlConnection connection = new SqlConnection(DataProvider.Instance.connectionSTR))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("sp_GenerateImp_ID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Thêm tham số OUTPUT cho Sup_ID
+                    SqlParameter outputParam = new SqlParameter
+                    {
+                        ParameterName = "@Imp_ID",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Size = 20,
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(outputParam);
+
+                    // Thực thi stored procedure
+                    command.ExecuteNonQuery();
+
+                    // Lấy giá trị từ tham số OUTPUT và trả về
+                    return outputParam.Value.ToString();
+                }
+            }
+        }
+        public DataTable SupplierImportStatistic ()
+        {
+            string query = "SELECT*FROM [dbo].[SupplierImportStatistic]";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable ImportStatistic()
+        {
+            string query = "SELECT*FROM [dbo].[ImportStatistic]";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetHistory(String Emp_ID)
+        {
+            string query = "SELECT*FROM vw_ImportHistory_ByEmployee WHERE Emp_ID = @Emp_ID";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {Emp_ID});
+        }
+        #endregion
     }
 }

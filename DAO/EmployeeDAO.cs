@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_DBMS.DAO
 {
-    class EmployeeDAO
+    public class EmployeeDAO
     {
         public static EmployeeDAO instance;
         public static EmployeeDAO Instance
@@ -21,126 +23,241 @@ namespace Project_DBMS.DAO
             }
             private set { instance = value; }
         }
-        private EmployeeDAO() { }
-
-        // Add Employee
-        public bool AddEmployee(string name, DateTime dob, string phone)
+        #region LOGIN
+        public string CreateNewLogin(string emp_id)
         {
-            string query = "EXEC AddEmployee @name , @dob , @phone";
-            object[] parameters = new object[] { name, dob, phone };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-
-            return result > 0;
-        }
-
-        // Update Employee
-        public bool UpdateEmployee(int id, string name, DateTime dob, string phone)
-        {
-            string query = "EXEC UpdateEmployee @id , @name , @phone, @dob";
-            object[] parameters = new object[] { id, name, phone, dob };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-
-        // Delete Employee
-        public bool DeleteEmployee(int id)
-        {
-            string query = "EXEC DeleteEmployee @id";
-            object[] parameters = new object[] { id };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-
-        // Search Employee
-        public List<Employee> SearchEmployee(string keyword)
-        {
-            string query = "EXEC SearchEmployee @Keyword";
-            object[] parameters = new object[] { keyword };
-            List<Employee> Employees = new List<Employee>();
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            foreach (DataRow item in data.Rows)
+            try
             {
-                Employees.Add(new Employee(item));
-            }
-            return Employees;
-        }
+                using (SqlConnection conn = new SqlConnection(DAO.DataProvider.Instance.connectionSTR))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_CreateAccount", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Emp_ID", emp_id); // Truyền emp_id thay vì giá trị cứng
 
-        // Get Employees List
-        public List<Employee> GetEmployeeList()
-        {
-            string query = "EXEC GetEmployeeList";
-            List<Employee> Employees = new List<Employee>();
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                Employees.Add(new Employee(item));
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return reader["Message"].ToString();
+                            }
+                        }
+                    }
+                }
             }
-            return Employees;
-        }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi SQL: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khác: " + ex.Message);
+            }
 
-        // Get Employee by ID
-        public Employee GetEmployeeByID(int id)
-        {
-            string query = "SELECT * FROM Employee WHERE Emp_ID = @id";
-            object[] parameters = new object[] { id };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
-            {
-                return new Employee(data.Rows[0]);
-            }
             return null;
         }
-        // Get Employee by Name
-        public Employee GetEmployeeByName(string name)
+        public void DeleteAccount(string empId)
         {
-            string query = string.Format("SELECT * FROM Employee WHERE Emp_Name = N'{0}'", name );
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            if (data.Rows.Count > 0)
+            try
             {
-                return new Employee(data.Rows[0]);
+                using (SqlConnection conn = new SqlConnection(DAO.DataProvider.Instance.connectionSTR))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_DeleteAccount", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Emp_ID", empId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string message = reader[0].ToString();
+                                MessageBox.Show(message); // Hoặc đưa vào TextBox
+                            }
+                        }
+                    }
+                }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        public string ResertPaswword(string empId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DAO.DataProvider.Instance.connectionSTR))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_ResetAccountPassword", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Emp_ID", empId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Đọc cột NewPassword
+                                return reader["NewPassword"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi SQL: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khác: " + ex.Message);
+            }
+
             return null;
         }
 
-
-        // Get Top Employee
-        public List<Employee> GetTopEmployee(DateTime startDate, DateTime endDate, int top)
+        public DataTable ListAccount()
         {
-            string query = "EXEC GetTopEmployee @startDate, @endDate, @top";
-            object[] parameters = new object[] { startDate, endDate, top };
-            List<Employee> Employees = new List<Employee>();
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            foreach (DataRow item in data.Rows)
+            string query = "Select * from [dbo].[vw_ListAccount]";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable ModiFiedTime()
+        {
+            return DataProvider.Instance.ExecuteQuery("Select * from [dbo].[vw_ModifiedTimeLogins]");
+        }
+        public DataTable SearchAccount(string emp_id)
+        {
+            string query = "Select * from [dbo].[vw_ListAccount] where username = @emp_id";
+            object[] parameters = new object[] { emp_id  };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
+        public string LoginDatabase(string username, string password)
+        {
+            string connectionString = $"Data Source=EOVIEN;Initial Catalog=DBMS_Prọject;User Id={username};Password={password};TrustServerCertificate=True";
+            string userRole = "";
+
+            try
             {
-                Employees.Add(new Employee(item));
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_GetMyRole", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@username", username); // Thêm tham số @username
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                userRole = reader["RoleName"].ToString();
+                            }
+                        }
+                    }
+                }
             }
-            return Employees;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi đăng nhập: " + ex.Message);
+                return "";
+            }
+
+            return userRole;
         }
 
-        //Get Age Employee
-        public int GetAgeEmployee(int id)
+        #endregion
+
+        #region Employee
+        // Sử dụng DataProvider để thực thi các query
+        public bool Insert(DTO.Employee emp)
         {
-            string query = "EXEC GetAgeEmployee @id";
-            object[] parameters = new object[] { id };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
+            string query = "EXEC sp_InsertEmployee @Emp_ID , @Emp_Name , @Emp_DOB , @Emp_Gender , @Emp_Address , @Emp_Phone , @Emp_Email , @Emp_Position , @Emp_HireDate , @Emp_Salary";
+            object[] parameters = { emp.Emp_ID, emp.Emp_Name, emp.Emp_DOB, emp.Emp_Gender, emp.Emp_Address, emp.Emp_Phone, emp.Emp_Email, emp.Emp_Position, emp.Emp_HireDate, emp.Emp_Salary };
+
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0;
+
+        }
+        public bool Update(DTO.Employee emp)
+        {
+            string query = "EXEC sp_UpdateEmployee @Emp_ID , @Emp_Name , @Emp_DOB , " +
+                          "@Emp_Gender , @Emp_Address , @Emp_Phone , @Emp_Email , " +
+                          "@Emp_Position , @Emp_HireDate , @Emp_Status , @Emp_Salary";
+
+            object[] parameters = new object[] { emp.Emp_ID, emp.Emp_Name, emp.Emp_DOB, emp.Emp_Gender, emp.Emp_Address, emp.Emp_Phone, emp.Emp_Email, emp.Emp_Position, emp.Emp_HireDate, emp.Emp_Status, emp.Emp_Salary };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
+        }
+        public bool Delete(string empId)
+        {
+            string query = "EXEC sp_DeleteEmployee @Emp_ID";
+            object[] parameters = new object[] { empId };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
+        }
+        public List<DTO.Employee> Search(string Search)
+        {
+            string query = "EXEC sp_SearchEmployee @Search";
+            object[] parameters = new object[] { Search };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+            List<DTO.Employee> employees = new List<DTO.Employee>();
+            foreach (DataRow row in data.Rows)
             {
-                return (int)data.Rows[0]["Age"];
+                employees.Add(new DTO.Employee(row));
             }
-            return 0;
+            return employees;
+        }
+        public List<DTO.Employee> GetEmployees()
+        {
+            string query = "EXEC sp_SearchEmployee";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            List<DTO.Employee> employees = new List<DTO.Employee>();
+
+            foreach (DataRow row in data.Rows)
+            {
+                employees.Add(new DTO.Employee(row));
+            }
+            return employees;
+        }
+        public string GenerateEmpID(string empPosition)
+        {
+            using (SqlConnection connection = new SqlConnection(DataProvider.Instance.connectionSTR))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("sp_GenerateEmpID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Emp_Position", empPosition);
+
+                    SqlParameter outputIdParam = new SqlParameter("@GeneratedID", SqlDbType.NVarChar, 20)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(outputIdParam);
+
+                    command.ExecuteNonQuery();
+                    return outputIdParam.Value.ToString();
+                }
+            }
         }
 
-        // Get Employee Revenue In Period
-        public int GetCountEmployee(int id)
+        public DataTable EmployeeSalesStatistic()
         {
-            string query = "EXEC GetCountEmployee @id";
-            object[] parameters = new object[] { id };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
-            {
-                return (int)data.Rows[0]["Count"];
-            }
-            return 0;
+            string query = "SELECT * FROM EmployeeSalesStatistic";
+            return DataProvider.Instance.ExecuteQuery(query);
         }
+        #endregion
     }
 }

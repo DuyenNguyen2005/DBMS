@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_DBMS.DAO
 {
@@ -19,68 +21,103 @@ namespace Project_DBMS.DAO
 
         private Sell_TransactionDAO() { }
         // Add Sell Transaction
-        public bool AddSellTransaction(int pro_id, int cus_id, int emp_id, int quantity, decimal discount, decimal price)
+        public bool Insert(DTO.Sell_Transaction sellTransaction)
         {
-            string query = "EXEC AddSellTransaction @Pro_ID , @Cus_ID , @Emp_ID , @Sell_Quantity , @Sell_Discount";
-            object[] parameters = new object[] { pro_id, cus_id, emp_id, quantity, discount, price };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
+            try
+            {
+                string query = "EXEC [sp_InsertSellTransaction] @Sell_ID , @Cus_ID , @Emp_ID , @Sell_Date";
+                int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
+                {
+            sellTransaction.Sell_ID,
+            sellTransaction.Cus_ID,
+            sellTransaction.Emp_ID,
+            sellTransaction.Sell_Date
+                });
+
+                return result > 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi SQL: {ex.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi hệ thống: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
-        // Update Sell Transaction
-        public bool UpdateSellTransaction(int id, int pro_id, int cus_id, int emp_id, int quantity, decimal price, decimal discount)
-        {
-            string query = "EXEC UpdateSellTransaction @Sell_ID , @Pro_ID , @Cus_ID , @Emp_ID , @Sell_Quantity , @Sell_Price , @Sell_Discount";
-            object[] parameters = new object[] { id, pro_id, cus_id, emp_id, quantity, price, discount };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
+
         // Delete Sell Transaction
-        public bool DeleteSellTransaction(int id)
+        public bool Delete(string sellID)
         {
-            string query = "EXEC DeleteSellTransaction @id";
-            object[] parameters = new object[] { id };
-            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return result > 0;
-        }
-        //Get Sell Transaction by ID
-        public Sell_Transaction GetSellTransactionById(int Sell_ID)
-        {
-            string query = "SELECT * FROM Sell_Transaction WHERE Sell_ID = @Sell_ID";
-            object[] parameters = new object[] { Sell_ID };
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            if (data.Rows.Count > 0)
-            {
-                return new Sell_Transaction(data.Rows[0]);
-            }
-            return null;
+            string query = "EXEC sp_DeleteSellTransaction @Sell_ID";
+            object[] parameters = { sellID };
+
+            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return rowsAffected > 0;
         }
 
-        // Get All Sell Transactions
-        public List<Sell_Transaction> GetSellTransactionList()
-        {
-            string query = "EXEC GetSellTransactionList";
-            var data = DataProvider.Instance.ExecuteQuery(query);
-            List<Sell_Transaction> transactions = new List<Sell_Transaction>();
-            foreach (DataRow item in data.Rows)
-            {
-                transactions.Add(new Sell_Transaction(item));
-            }
-            return transactions;
-        }
         // Search Sell Transaction
-        public List<Sell_Transaction> SearchSellTransaction(string keyword)
+        public List<DTO.Sell_Transaction> Search(string search)
         {
-            string query = "EXEC SearchSellTransaction @Keyword";
-            object[] parameters = new object[] { keyword };
-            List<Sell_Transaction> transactions = new List<Sell_Transaction>();
-            var data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            foreach (DataRow item in data.Rows)
-            {
-                transactions.Add(new Sell_Transaction(item));
-            }
-            return transactions;
-        }
+            string query = "EXEC sp_SearchSellTransaction @Search";
+            object[] parameters = { search };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
 
+            List<DTO.Sell_Transaction> Sells = new List<DTO.Sell_Transaction>();
+            foreach (DataRow row in data.Rows)
+            {
+                Sells.Add(new DTO.Sell_Transaction(row));
+            }
+            return Sells;
+        }
+        public List<DTO.Sell_Transaction> GetSellTransactions()
+        {
+            string query = "EXEC sp_SearchSellTransaction";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            List<DTO.Sell_Transaction> Sells = new List<DTO.Sell_Transaction>();
+            foreach (DataRow row in data.Rows)
+            {
+                Sells.Add(new DTO.Sell_Transaction(row));
+            }
+            return Sells;
+        }
+        public string GenerateSellID()
+        {
+            using (SqlConnection connection = new SqlConnection(DataProvider.Instance.connectionSTR))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("sp_GenerateSell_ID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Thêm tham số OUTPUT cho Sup_ID
+                    SqlParameter outputParam = new SqlParameter
+                    {
+                        ParameterName = "@Sell_ID",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Size = 20,
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(outputParam);
+
+                    // Thực thi stored procedure
+                    command.ExecuteNonQuery();
+
+                    // Lấy giá trị từ tham số OUTPUT và trả về
+                    return outputParam.Value.ToString();
+                }
+            }
+        }
+        public DataTable GetHistory(string emp_id)
+        {
+            string query = "SELECT * FROM vw_SellHistory_ByEmployee WHERE Emp_ID = @Emp_ID";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { emp_id });
+        }
     }
 
 }

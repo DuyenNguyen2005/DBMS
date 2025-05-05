@@ -34,15 +34,22 @@ namespace Project_DBMS.DAO
                     using (SqlCommand cmd = new SqlCommand("sp_CreateAccount", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Emp_ID", emp_id); // Truyền emp_id thay vì giá trị cứng
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        // Tham số input
+                        cmd.Parameters.AddWithValue("@Emp_ID", emp_id);
+
+                        // Tham số output (phải khai báo rõ OUTPUT)
+                        SqlParameter outputPass = new SqlParameter("@GeneratedPassword", SqlDbType.NVarChar, 100)
                         {
-                            if (reader.Read())
-                            {
-                                return reader["Message"].ToString();
-                            }
-                        }
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputPass);
+
+                        // Gọi thủ tục
+                        cmd.ExecuteNonQuery();
+
+                        // Trả về giá trị mật khẩu được sinh ra
+                        return outputPass.Value.ToString();
                     }
                 }
             }

@@ -49,7 +49,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createSoldTransactionToolStripMenuItem,
@@ -59,7 +58,8 @@
             this.lỊCHSỬGIAODỊCHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2224, 46);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1483, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +67,7 @@
             // 
             this.createSoldTransactionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createSoldTransactionToolStripMenuItem.Name = "createSoldTransactionToolStripMenuItem";
-            this.createSoldTransactionToolStripMenuItem.Size = new System.Drawing.Size(184, 42);
+            this.createSoldTransactionToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
             this.createSoldTransactionToolStripMenuItem.Text = "BÁN HÀNG";
             this.createSoldTransactionToolStripMenuItem.Click += new System.EventHandler(this.createSoldTransactionToolStripMenuItem_Click);
             // 
@@ -78,14 +78,14 @@
             this.dANHSÁCHToolStripMenuItem,
             this.tHỐNGKÊToolStripMenuItem});
             this.kHÁCHHÀNGToolStripMenuItem.Name = "kHÁCHHÀNGToolStripMenuItem";
-            this.kHÁCHHÀNGToolStripMenuItem.Size = new System.Drawing.Size(221, 42);
+            this.kHÁCHHÀNGToolStripMenuItem.Size = new System.Drawing.Size(153, 29);
             this.kHÁCHHÀNGToolStripMenuItem.Text = "KHÁCH HÀNG";
             // 
             // cHỈNHSỬATHÔNGTINToolStripMenuItem
             // 
             this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Name = "cHỈNHSỬATHÔNGTINToolStripMenuItem";
-            this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Size = new System.Drawing.Size(348, 36);
+            this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
             this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Text = "CHỈNH SỬA THÔNG TIN";
             this.cHỈNHSỬATHÔNGTINToolStripMenuItem.Click += new System.EventHandler(this.cHỈNHSỬATHÔNGTINToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.dANHSÁCHToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dANHSÁCHToolStripMenuItem.Name = "dANHSÁCHToolStripMenuItem";
-            this.dANHSÁCHToolStripMenuItem.Size = new System.Drawing.Size(348, 36);
+            this.dANHSÁCHToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
             this.dANHSÁCHToolStripMenuItem.Text = "DANH SÁCH";
             this.dANHSÁCHToolStripMenuItem.Click += new System.EventHandler(this.dANHSÁCHToolStripMenuItem_Click);
             // 
@@ -101,7 +101,7 @@
             // 
             this.tHỐNGKÊToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tHỐNGKÊToolStripMenuItem.Name = "tHỐNGKÊToolStripMenuItem";
-            this.tHỐNGKÊToolStripMenuItem.Size = new System.Drawing.Size(348, 36);
+            this.tHỐNGKÊToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
             this.tHỐNGKÊToolStripMenuItem.Text = "THỐNG KÊ";
             this.tHỐNGKÊToolStripMenuItem.Click += new System.EventHandler(this.tHỐNGKÊToolStripMenuItem_Click);
             // 
@@ -111,14 +111,14 @@
             this.dANHSÁCHToolStripMenuItem1,
             this.tHỐNGKÊToolStripMenuItem1});
             this.sẢNPHẨMToolStripMenuItem.Name = "sẢNPHẨMToolStripMenuItem";
-            this.sẢNPHẨMToolStripMenuItem.Size = new System.Drawing.Size(184, 42);
+            this.sẢNPHẨMToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
             this.sẢNPHẨMToolStripMenuItem.Text = "SẢN PHẨM";
             // 
             // dANHSÁCHToolStripMenuItem1
             // 
             this.dANHSÁCHToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dANHSÁCHToolStripMenuItem1.Name = "dANHSÁCHToolStripMenuItem1";
-            this.dANHSÁCHToolStripMenuItem1.Size = new System.Drawing.Size(237, 36);
+            this.dANHSÁCHToolStripMenuItem1.Size = new System.Drawing.Size(165, 24);
             this.dANHSÁCHToolStripMenuItem1.Text = "DANH SÁCH";
             this.dANHSÁCHToolStripMenuItem1.Click += new System.EventHandler(this.dANHSÁCHToolStripMenuItem1_Click);
             // 
@@ -126,63 +126,68 @@
             // 
             this.tHỐNGKÊToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tHỐNGKÊToolStripMenuItem1.Name = "tHỐNGKÊToolStripMenuItem1";
-            this.tHỐNGKÊToolStripMenuItem1.Size = new System.Drawing.Size(237, 36);
+            this.tHỐNGKÊToolStripMenuItem1.Size = new System.Drawing.Size(165, 24);
             this.tHỐNGKÊToolStripMenuItem1.Text = "THỐNG KÊ";
             this.tHỐNGKÊToolStripMenuItem1.Click += new System.EventHandler(this.tHỐNGKÊToolStripMenuItem1_Click);
             // 
             // nHÀCUNGCẤPToolStripMenuItem
             // 
             this.nHÀCUNGCẤPToolStripMenuItem.Name = "nHÀCUNGCẤPToolStripMenuItem";
-            this.nHÀCUNGCẤPToolStripMenuItem.Size = new System.Drawing.Size(245, 42);
+            this.nHÀCUNGCẤPToolStripMenuItem.Size = new System.Drawing.Size(169, 29);
             this.nHÀCUNGCẤPToolStripMenuItem.Text = "NHÀ CUNG CẤP";
             this.nHÀCUNGCẤPToolStripMenuItem.Click += new System.EventHandler(this.nHÀCUNGCẤPToolStripMenuItem_Click);
             // 
             // lỊCHSỬGIAODỊCHToolStripMenuItem
             // 
             this.lỊCHSỬGIAODỊCHToolStripMenuItem.Name = "lỊCHSỬGIAODỊCHToolStripMenuItem";
-            this.lỊCHSỬGIAODỊCHToolStripMenuItem.Size = new System.Drawing.Size(294, 42);
+            this.lỊCHSỬGIAODỊCHToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
             this.lỊCHSỬGIAODỊCHToolStripMenuItem.Text = "LỊCH SỬ GIAO DỊCH";
             this.lỊCHSỬGIAODỊCHToolStripMenuItem.Click += new System.EventHandler(this.lỊCHSỬGIAODỊCHToolStripMenuItem_Click);
             // 
             // pnSearch
             // 
-            this.pnSearch.Location = new System.Drawing.Point(22, 63);
+            this.pnSearch.Location = new System.Drawing.Point(15, 41);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(1642, 122);
+            this.pnSearch.Size = new System.Drawing.Size(1095, 79);
             this.pnSearch.TabIndex = 1;
             // 
             // pnAdd1
             // 
-            this.pnAdd1.Location = new System.Drawing.Point(23, 191);
+            this.pnAdd1.Location = new System.Drawing.Point(15, 124);
+            this.pnAdd1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnAdd1.Name = "pnAdd1";
-            this.pnAdd1.Size = new System.Drawing.Size(814, 381);
+            this.pnAdd1.Size = new System.Drawing.Size(543, 248);
             this.pnAdd1.TabIndex = 2;
             // 
             // pnAdd2
             // 
-            this.pnAdd2.Location = new System.Drawing.Point(842, 188);
+            this.pnAdd2.Location = new System.Drawing.Point(561, 122);
+            this.pnAdd2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnAdd2.Name = "pnAdd2";
-            this.pnAdd2.Size = new System.Drawing.Size(1351, 384);
+            this.pnAdd2.Size = new System.Drawing.Size(901, 250);
             this.pnAdd2.TabIndex = 3;
             // 
             // pnAdd3
             // 
-            this.pnAdd3.Location = new System.Drawing.Point(23, 590);
+            this.pnAdd3.Location = new System.Drawing.Point(15, 384);
+            this.pnAdd3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnAdd3.Name = "pnAdd3";
-            this.pnAdd3.Size = new System.Drawing.Size(2170, 573);
+            this.pnAdd3.Size = new System.Drawing.Size(1447, 447);
             this.pnAdd3.TabIndex = 4;
             // 
             // StaffForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2224, 1200);
+            this.ClientSize = new System.Drawing.Size(1483, 842);
             this.Controls.Add(this.pnAdd3);
             this.Controls.Add(this.pnAdd2);
             this.Controls.Add(this.pnAdd1);
             this.Controls.Add(this.pnSearch);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StaffForm";
             this.Text = "StaffForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -33,6 +33,7 @@ namespace Project_DBMS
 
         private void createSoldTransactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnSearch.Controls.Clear();
             pnAdd1.Controls.Clear();
             pnAdd2.Controls.Clear();
             pnAdd3.Controls.Clear();
@@ -46,6 +47,10 @@ namespace Project_DBMS
 
         private void dANHSÁCHToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             CustomerUC customerUC = new CustomerUC();
             customerUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();
@@ -54,6 +59,11 @@ namespace Project_DBMS
 
         private void cHỈNHSỬATHÔNGTINToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
+
             EditAndRemoveCustomer EditAndRemoveCustomer = new EditAndRemoveCustomer();
             EditAndRemoveCustomer.Dock = DockStyle.Fill;
             pnAdd1.Controls.Clear();
@@ -62,6 +72,10 @@ namespace Project_DBMS
 
         private void tHỐNGKÊToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             StaticticsCustomerUC StaticticsCustomerUC = new StaticticsCustomerUC();
             StaticticsCustomerUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();
@@ -69,7 +83,10 @@ namespace Project_DBMS
         }
 
         private void dANHSÁCHToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+        {pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             ProductUC ProductUC = new ProductUC();
             ProductUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();
@@ -77,7 +94,10 @@ namespace Project_DBMS
         }
 
         private void tHỐNGKÊToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+        {pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             StaticticsProductUC StaticticsProductUC = new StaticticsProductUC();
             StaticticsProductUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();
@@ -85,7 +105,10 @@ namespace Project_DBMS
         }
 
         private void nHÀCUNGCẤPToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             SupplierUC SupplierUC = new SupplierUC();
             SupplierUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();
@@ -93,7 +116,10 @@ namespace Project_DBMS
         }
 
         private void lỊCHSỬGIAODỊCHToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {pnSearch.Controls.Clear();
+            pnAdd1.Controls.Clear();
+            pnAdd2.Controls.Clear();
+            pnAdd3.Controls.Clear();
             SellDetailUC SellDetailUC = new SellDetailUC();
             SellDetailUC.Dock = DockStyle.Fill;
             pnAdd3.Controls.Clear();

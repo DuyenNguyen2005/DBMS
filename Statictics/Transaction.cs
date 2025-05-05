@@ -86,7 +86,7 @@ namespace Project_DBMS.Statictics
                 else if (comboBox1.SelectedIndex == 1)
                 {
                     cellValue = row.Cells["Sell_ID"].Value;
-                    dtgvDetail.DataSource = DAO.ImportDetailTransactionDAO.Instance.GetList((string)cellValue);
+                    dtgvDetail.DataSource = DAO.SellDetailTransactionDAO.Instance.GetList((string)cellValue);
                 }
 
                 if (cellValue != null)

@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(29, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 31);
+            this.label1.Size = new System.Drawing.Size(87, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm Kiếm:";
             // 
@@ -72,7 +72,7 @@
             this.txtSearch.Location = new System.Drawing.Point(181, 27);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(707, 38);
+            this.txtSearch.Size = new System.Drawing.Size(707, 28);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -87,7 +87,7 @@
             0,
             0});
             this.nmdQuantity.Name = "nmdQuantity";
-            this.nmdQuantity.Size = new System.Drawing.Size(80, 38);
+            this.nmdQuantity.Size = new System.Drawing.Size(80, 28);
             this.nmdQuantity.TabIndex = 3;
             // 
             // label2
@@ -97,7 +97,7 @@
             this.label2.Location = new System.Drawing.Point(923, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 31);
+            this.label2.Size = new System.Drawing.Size(82, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Số lượng:";
             // 
@@ -156,17 +156,17 @@
             this.lbAmout.Location = new System.Drawing.Point(923, 318);
             this.lbAmout.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbAmout.Name = "lbAmout";
-            this.lbAmout.Size = new System.Drawing.Size(145, 31);
+            this.lbAmout.Size = new System.Drawing.Size(95, 21);
             this.lbAmout.TabIndex = 9;
             this.lbAmout.Text = "Tổng Tiền: ";
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(481, 387);
+            this.button2.Location = new System.Drawing.Point(485, 359);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(407, 39);
+            this.button2.Size = new System.Drawing.Size(407, 25);
             this.button2.TabIndex = 26;
             this.button2.Text = "THOÁT";
             this.button2.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             // 
             // AddSellDetailUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lbAmout);

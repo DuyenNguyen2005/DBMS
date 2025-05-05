@@ -19,12 +19,12 @@ namespace Project_DBMS.Product
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DAO.ProductDAO.Instance.ProductInventoryStatus();
+            dataGridView1.DataSource = DAO.ProductDAO.Instance.ProductInOutSummary();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DAO.ProductDAO.Instance.ProductInOutSummary();
+            dataGridView1.DataSource = DAO.ProductDAO.Instance.ProductInventoryStatus();
         }
 
         private void button3_Click(object sender, EventArgs e)

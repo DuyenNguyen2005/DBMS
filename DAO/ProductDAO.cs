@@ -82,7 +82,7 @@ namespace Project_DBMS.DAO
         }
         public DataTable GetProducts_Sell()
         {
-            string query = "SELECT Pro_ID , Pro_Name , Pro_Quantity , Pro_Price , Pro_Status FROM Product";
+            string query = "SELECT Pro_ID , Pro_Name , Pro_Quantity , Pro_Price , Pro_Status FROM Product WHERE Pro_Quantity <> 0";
 
             return DataProvider.Instance.ExecuteQuery(query);
         }

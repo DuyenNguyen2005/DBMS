@@ -21,7 +21,7 @@ namespace Project_DBMS.Customer
         }
         void LoadCustomer()
         {
-            dataGridViewCustomers.DataSource = DAO.CustomerDAO.Instance.GetCustomers();
+            dataGridViewCustomers.DataSource = DAO.CustomerDAO.Instance.Search("");
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {

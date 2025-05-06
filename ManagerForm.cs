@@ -40,7 +40,7 @@ namespace Project_DBMS
         private void dANHSÁCHToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear(); // Xóa control cũ (nếu có)
-            ProductUC control = new ProductUC();
+            CustomerUC control = new CustomerUC();
             control.Dock = DockStyle.Fill;
             panel1.Controls.Add(control);
         }
@@ -56,7 +56,7 @@ namespace Project_DBMS
         private void cHỈNHSỬATHÔNGTINToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear(); // Xóa control cũ (nếu có)
-            ProductUC control = new ProductUC();
+            EditAndRemoveProductUC1 control = new EditAndRemoveProductUC1();
             control.Dock = DockStyle.Fill;
             panel1.Controls.Add(control);
         }
@@ -64,7 +64,7 @@ namespace Project_DBMS
         private void dANHSÁCHToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear(); // Xóa control cũ (nếu có)
-            SupplierUC control = new SupplierUC();
+            ProductUC control = new ProductUC();
             control.Dock = DockStyle.Fill;
             panel1.Controls.Add(control);
         }
